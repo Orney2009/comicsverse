@@ -3,37 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComicsVerse</title>
+    <title>ComicsVerse - Accueil</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur ComicsVerse</h1>
-        <p>Le repaire des passionnés de comics !</p>
-        <nav>
-            <ul>
-                <li><a href="#comics">Explorer les Comics</a></li>
-                <li><a href="#news">Dernières Critiques</a></li>
-                <li><a href="#forum">Rejoindre la Communauté</a></li>
-            </ul>
-        </nav>
+
+    <!-- 🏠 Barre de navigation -->
+    <nav>
+        <div class="logo">ComicsVerse</div>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="comics.html">Comics</a></li>
+            <li><a href="tvshows.html">TV Shows</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="wiki.html">Wiki</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🎭 Bannière principale -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1>Bienvenue sur ComicsVerse</h1>
+            <p>Le repaire ultime des passionnés de comics !</p>
+            <a href="comics.html" class="btn">Explorer les Comics</a>
+        </div>
     </header>
+
+    <!-- 📚 Section Comics Populaires -->
     <section id="comics">
-        <h2>Les Dernières Sorties</h2>
+        <h2>Les Comics du Moment</h2>
         <div class="comic-grid">
             <div class="comic">
                 <img src="batman.jpg" alt="Batman">
                 <h3>Batman : The Killing Joke</h3>
                 <p>Un chef-d'œuvre signé Alan Moore.</p>
-                <a href="#">Lire plus</a>
+                <a href="comics.html">Voir plus</a>
             </div>
             <div class="comic">
                 <img src="spiderman.jpg" alt="Spider-Man">
                 <h3>The Amazing Spider-Man</h3>
                 <p>Les origines du héros culte.</p>
-                <a href="#">Lire plus</a>
+                <a href="comics.html">Voir plus</a>
             </div>
         </div>
     </section>
+
+    <!-- 📌 Pied de page -->
+    <footer>
+        <p>© 2025 ComicsVerse - Tous droits réservés</p>
+    </footer>
+
 </body>
 </html>
