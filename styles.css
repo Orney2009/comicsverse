@@ -1,161 +1,94 @@
-/* Variables de couleurs */
-:root {
-    --primary-color: #1c1c1c;
-    --secondary-color: #00aaff;
-    --text-color: #ffffff;
-}
-
-/* 🎨 Global */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: var(--primary-color);
-}
-
-/* 🛠️ Navbar */
-.navbar {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.navbar a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.navbar a:hover {
-    color: var(--secondary-color);
-}
-
-/* 🖼️ Carrousel */
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
-}
-
-.carousel-images {
+/* 🖼️ Bannière Comics */
+.banner {
+    background: url('banner-comics.jpg') no-repeat center center/cover;
+    height: 300px;
     display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-}
-
-.carousel-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    color: var(--text-color);
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
+    color: #fff;
+    background-size: cover;
 }
 
-.carousel-overlay h1 {
-    font-size: 3.5em;
+.banner h1 {
+    font-size: 3em;
     margin: 0;
 }
 
-.carousel-overlay p {
+.banner p {
     font-size: 1.2em;
 }
 
-/* 🔥 Sections */
-section {
-    padding: 50px 20px;
-}
-
-.intro {
-    background-color: #ffffff;
+/* 🔍 Barre de recherche */
+.search-bar {
     text-align: center;
+    margin: 20px 0;
 }
 
+.search-bar input {
+    padding: 10px;
+    width: 50%;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    background: #00aaff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 📚 Catégories */
 .categories {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 .category {
-    background-color: #e0e0e0;
+    background: #eee;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 22%;
+    width: 30%;
 }
 
 .category h3 {
-    font-size: 1.8em;
-    color: var(--secondary-color);
+    color: #00aaff;
 }
 
-.category a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* 💥 Articles */
-.featured-articles {
+/* 📚 Dernières sorties et populaires */
+.comics-list, .popular-list, .creators-list {
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin: 20px 0;
 }
 
-.article {
-    background-color: #ffffff;
-    width: 30%;
-    padding: 20px;
+.comic, .creator {
+    background: white;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 30%;
 }
 
-.article img {
+.comic img, .creator img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.article h3 {
-    color: var(--primary-color);
-    margin: 10px 0;
+.comic h3, .creator h3 {
+    color: #1c1c1c;
 }
 
-.article a {
-    color: var(--secondary-color);
+.comic a, .creator a {
     text-decoration: none;
     font-weight: bold;
-}
-
-/* 👇 Footer */
-footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 20px;
+    color: #00aaff;
 }
