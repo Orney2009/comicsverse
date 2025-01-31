@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComicsVerse - Accueil</title>
+    <title>ComicsVerse - Comics</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> <!-- Charger le JS après le contenu de la page -->
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <!-- 🌀 Navigation -->
     <header>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="comics.html">Comics</a></li>
+                <li><a href="comics.html" class="active">Comics</a></li>
                 <li><a href="tvshows.html">TV Shows</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="wiki.html">Wiki</a></li>
@@ -21,75 +22,97 @@
         </nav>
     </header>
 
-    <!-- 🖼️ Carrousel de la page d'accueil -->
-    <section class="carousel">
-        <div class="carousel-images">
-            <!-- Images du carrousel -->
-            <img src="image1.jpg" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-            <img src="image4.jpg" alt="Image 4">
-            <img src="image5.jpg" alt="Image 5">
-        </div>
-        <div class="carousel-overlay">
-            <h1>Bienvenue sur ComicsVerse</h1>
-            <p>Le repaire ultime des passionnés de comics !</p>
-        </div>
-        <!-- Boutons de navigation -->
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
+    <!-- 🖼️ Bannière Comics -->
+    <section class="banner">
+        <h1>Explorez l'univers des Comics</h1>
+        <p>Les dernières sorties, les classiques intemporels et les héros iconiques</p>
     </section>
 
-    <!-- 🔥 Section Introduction -->
-    <section class="intro">
-        <h2>Pourquoi ComicsVerse ?</h2>
-        <p>Explorez un univers passionnant dédié aux comics, aux séries TV et aux films. Découvrez vos héros préférés, leurs aventures, et plongez dans l'histoire du comics à travers les âges !</p>
+    <!-- 🔍 Barre de recherche -->
+    <section class="search-bar">
+        <input type="text" id="search" placeholder="Recherchez un comics, un auteur, un éditeur...">
+        <button onclick="searchComics()">Rechercher</button>
     </section>
 
-    <!-- 💥 Section Catégories -->
+    <!-- 🏆 Catégories de Comics -->
     <section class="categories">
         <div class="category">
-            <h3>Comics</h3>
-            <p>Explorez les dernières sorties et les classiques des comics.</p>
-            <a href="comics.html">En savoir plus</a>
+            <h3>Marvel</h3>
+            <p>Les légendes de l'univers Marvel : Spider-Man, Iron Man, X-Men...</p>
+            <a href="#">Explorer</a>
         </div>
         <div class="category">
-            <h3>TV Shows</h3>
-            <p>Découvrez les séries TV inspirées de l'univers des comics.</p>
-            <a href="tvshows.html">En savoir plus</a>
+            <h3>DC Comics</h3>
+            <p>Batman, Superman, Wonder Woman et bien d'autres !</p>
+            <a href="#">Explorer</a>
         </div>
         <div class="category">
-            <h3>Movies</h3>
-            <p>Films à ne pas manquer, des blockbusters aux films cultes !</p>
-            <a href="movies.html">En savoir plus</a>
-        </div>
-        <div class="category">
-            <h3>Wiki</h3>
-            <p>Accédez à notre encyclopédie sur les comics et leurs personnages.</p>
-            <a href="wiki.html">En savoir plus</a>
+            <h3>Indépendants</h3>
+            <p>Découvrez les pépites indépendantes comme Image Comics et Dark Horse.</p>
+            <a href="#">Explorer</a>
         </div>
     </section>
 
-    <!-- 📚 Section des articles récents ou à la une -->
-    <section class="featured-articles">
-        <h2>Les Derniers Articles</h2>
-        <div class="article">
-            <img src="article1.jpg" alt="Article 1">
-            <h3>Titre de l'article</h3>
-            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
-            <a href="#">Lire plus</a>
+    <!-- 📚 Dernières sorties -->
+    <section class="latest-comics">
+        <h2>Dernières Sorties</h2>
+        <div class="comics-list">
+            <div class="comic">
+                <img src="comic1.jpg" alt="Comic 1">
+                <h3>Titre du Comic 1</h3>
+                <p>Résumé rapide...</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="comic">
+                <img src="comic2.jpg" alt="Comic 2">
+                <h3>Titre du Comic 2</h3>
+                <p>Résumé rapide...</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="comic">
+                <img src="comic3.jpg" alt="Comic 3">
+                <h3>Titre du Comic 3</h3>
+                <p>Résumé rapide...</p>
+                <a href="#">Voir plus</a>
+            </div>
         </div>
-        <div class="article">
-            <img src="article2.jpg" alt="Article 2">
-            <h3>Titre de l'article</h3>
-            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
-            <a href="#">Lire plus</a>
+    </section>
+
+    <!-- ⭐ Comics populaires -->
+    <section class="popular-comics">
+        <h2>Les Comics les plus populaires</h2>
+        <div class="popular-list">
+            <div class="comic">
+                <img src="popular1.jpg" alt="Popular Comic 1">
+                <h3>Titre du Comic</h3>
+                <p>Résumé rapide...</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="comic">
+                <img src="popular2.jpg" alt="Popular Comic 2">
+                <h3>Titre du Comic</h3>
+                <p>Résumé rapide...</p>
+                <a href="#">Voir plus</a>
+            </div>
         </div>
-        <div class="article">
-            <img src="article3.jpg" alt="Article 3">
-            <h3>Titre de l'article</h3>
-            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
-            <a href="#">Lire plus</a>
+    </section>
+
+    <!-- ✒️ Auteurs & Éditeurs -->
+    <section class="creators">
+        <h2>Auteurs & Éditeurs</h2>
+        <div class="creators-list">
+            <div class="creator">
+                <img src="author1.jpg" alt="Auteur 1">
+                <h3>Stan Lee</h3>
+                <p>Le créateur légendaire derrière Spider-Man et bien d'autres !</p>
+                <a href="#">En savoir plus</a>
+            </div>
+            <div class="creator">
+                <img src="author2.jpg" alt="Auteur 2">
+                <h3>Alan Moore</h3>
+                <p>L'esprit derrière Watchmen et V pour Vendetta.</p>
+                <a href="#">En savoir plus</a>
+            </div>
         </div>
     </section>
 
@@ -98,5 +121,6 @@
         <p>&copy; 2025 ComicsVerse - Tous droits réservés</p>
         <p><a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
     </footer>
+
 </body>
 </html>
