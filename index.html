@@ -5,32 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComicsVerse - Accueil</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script> <!-- Charger le JS après le contenu de la page -->
 </head>
 <body>
-
-    <!-- 🎭 Bannière avec Carrousel -->
-    <header class="banner">
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="1.jpg" alt="Image 1">
-                <img src="2.jpg" alt="Image 2">           
-                <img src="5.jpg" alt="Image 5">
-            </div>          
-            <div class="carousel-overlay">
-                <h1>Bienvenue sur ComicsVerse</h1>
-                <p>Le repaire ultime des passionnés de comics !</p>
-            </div>
-            <button class="prev" onclick="prevSlide()">&#10094;</button>
-            <button class="next" onclick="nextSlide()">&#10095;</button>
-        </div>
+    <!-- 🌀 Navigation -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="comics.html">Comics</a></li>
+                <li><a href="tvshows.html">TV Shows</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="wiki.html">Wiki</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- 📌 Pied de page -->
-    <footer>
-        <p>© 2025 ComicsVerse - Tous droits réservés</p>
-    </footer>
+    <!-- 🖼️ Carrousel de la page d'accueil -->
+    <section class="carousel">
+        <div class="carousel-images">
+            <!-- Images du carrousel -->
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+        <div class="carousel-overlay">
+            <h1>Bienvenue sur ComicsVerse</h1>
+            <p>Le repaire ultime des passionnés de comics !</p>
+        </div>
+        <!-- Boutons de navigation -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </section>
 
+    <!-- 🔥 Section Introduction -->
+    <section class="intro">
+        <h2>Pourquoi ComicsVerse ?</h2>
+        <p>Explorez un univers passionnant dédié aux comics, aux séries TV et aux films. Découvrez vos héros préférés, leurs aventures, et plongez dans l'histoire du comics à travers les âges !</p>
+    </section>
+
+    <!-- 💥 Section Catégories -->
+    <section class="categories">
+        <div class="category">
+            <h3>Comics</h3>
+            <p>Explorez les dernières sorties et les classiques des comics.</p>
+            <a href="comics.html">En savoir plus</a>
+        </div>
+        <div class="category">
+            <h3>TV Shows</h3>
+            <p>Découvrez les séries TV inspirées de l'univers des comics.</p>
+            <a href="tvshows.html">En savoir plus</a>
+        </div>
+        <div class="category">
+            <h3>Movies</h3>
+            <p>Films à ne pas manquer, des blockbusters aux films cultes !</p>
+            <a href="movies.html">En savoir plus</a>
+        </div>
+        <div class="category">
+            <h3>Wiki</h3>
+            <p>Accédez à notre encyclopédie sur les comics et leurs personnages.</p>
+            <a href="wiki.html">En savoir plus</a>
+        </div>
+    </section>
+
+    <!-- 📚 Section des articles récents ou à la une -->
+    <section class="featured-articles">
+        <h2>Les Derniers Articles</h2>
+        <div class="article">
+            <img src="article1.jpg" alt="Article 1">
+            <h3>Titre de l'article</h3>
+            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
+            <a href="#">Lire plus</a>
+        </div>
+        <div class="article">
+            <img src="article2.jpg" alt="Article 2">
+            <h3>Titre de l'article</h3>
+            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
+            <a href="#">Lire plus</a>
+        </div>
+        <div class="article">
+            <img src="article3.jpg" alt="Article 3">
+            <h3>Titre de l'article</h3>
+            <p>Résumé de l'article. Cliquez ici pour lire l'article complet...</p>
+            <a href="#">Lire plus</a>
+        </div>
+    </section>
+
+    <!-- 👇 Footer -->
+    <footer>
+        <p>&copy; 2025 ComicsVerse - Tous droits réservés</p>
+        <p><a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
+    </footer>
 </body>
 </html>
