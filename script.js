@@ -3,13 +3,18 @@ const images = document.querySelectorAll(".carousel-images img");
 const totalImages = images.length;
 
 function showSlide(index) {
+    // Si on dépasse le nombre total d'images, recommence depuis la première
     if (index >= totalImages) {
-        currentIndex = 0;  // Retour à la première image si on dépasse la dernière
-    } else if (index < 0) {
-        currentIndex = totalImages - 1;  // Retour à la dernière image si on est avant la première
+        currentIndex = 0;
+    } 
+    // Si on revient avant la première image, passe à la dernière
+    else if (index < 0) {
+        currentIndex = totalImages - 1;
     } else {
         currentIndex = index;
     }
+
+    // Applique la transformation pour décaler les images
     document.querySelector(".carousel-images").style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
