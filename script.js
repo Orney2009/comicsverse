@@ -4,9 +4,9 @@ const totalImages = images.length;
 
 function showSlide(index) {
     if (index >= totalImages) {
-        currentIndex = 0;
+        currentIndex = 0;  // Retour à la première image si on dépasse la dernière
     } else if (index < 0) {
-        currentIndex = totalImages - 1;
+        currentIndex = totalImages - 1;  // Retour à la dernière image si on est avant la première
     } else {
         currentIndex = index;
     }
@@ -21,7 +21,7 @@ function prevSlide() {
     showSlide(currentIndex - 1);
 }
 
-// Défilement automatique toutes les 4 secondes
+// Délai ajusté de 8 secondes pour un défilement automatique
 setInterval(() => {
     nextSlide();
-}, 4000);
+}, 8000);  // Le carrousel défile toutes les 8 secondes
