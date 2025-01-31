@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComicsVerse - Accueil</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,33 +22,24 @@
         </ul>
     </nav>
 
-    <!-- 🎭 Bannière principale -->
+    <!-- 🎭 Bannière avec Carrousel -->
     <header class="banner">
-        <div class="banner-content">
-            <h1>Bienvenue sur ComicsVerse</h1>
-            <p>Le repaire ultime des passionnés de comics !</p>
-            <a href="comics.html" class="btn">Explorer les Comics</a>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="image1.jpg" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                <img src="image4.jpg" alt="Image 4">
+                <img src="image5.jpg" alt="Image 5">
+            </div>
+            <div class="carousel-overlay">
+                <h1>Bienvenue sur ComicsVerse</h1>
+                <p>Le repaire ultime des passionnés de comics !</p>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
         </div>
     </header>
-
-    <!-- 📚 Section Comics Populaires -->
-    <section id="comics">
-        <h2>Les Comics du Moment</h2>
-        <div class="comic-grid">
-            <div class="comic">
-                <img src="batman.jpg" alt="Batman">
-                <h3>Batman : The Killing Joke</h3>
-                <p>Un chef-d'œuvre signé Alan Moore.</p>
-                <a href="comics.html">Voir plus</a>
-            </div>
-            <div class="comic">
-                <img src="spiderman.jpg" alt="Spider-Man">
-                <h3>The Amazing Spider-Man</h3>
-                <p>Les origines du héros culte.</p>
-                <a href="comics.html">Voir plus</a>
-            </div>
-        </div>
-    </section>
 
     <!-- 📌 Pied de page -->
     <footer>
