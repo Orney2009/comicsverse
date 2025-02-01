@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComicsVerse - Comics</title>
+    <title>ComicsVerse - TV Shows</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -14,104 +14,129 @@
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="comics.html" class="active">Comics</a></li>
-                <li><a href="tvshows.html">TV Shows</a></li>
+                <li><a href="comics.html">Comics</a></li>
+                <li><a href="tvshows.html" class="active">TV Shows</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="wiki.html">Wiki</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 🖼️ Bannière Comics -->
+    <!-- 🎬 Bannière TV Shows -->
     <section class="banner">
-        <h1>Explorez l'univers des Comics</h1>
-        <p>Les dernières sorties, les classiques intemporels et les héros iconiques</p>
+        <h1>Plongez dans l’univers des séries adaptées de comics</h1>
+        <p>Découvrez les meilleures séries inspirées des comics et leurs coulisses</p>
     </section>
 
     <!-- 🔍 Barre de recherche -->
     <section class="search-bar">
-        <input type="text" id="search" placeholder="Recherchez un comics, un auteur, un éditeur...">
-        <button onclick="searchComics()">Rechercher</button>
+        <input type="text" id="search" placeholder="Recherchez une série, un personnage, une plateforme...">
+        <button onclick="searchTVShows()">Rechercher</button>
     </section>
 
-    <!-- 🏆 Catégories de Comics -->
-    <section class="categories">
-        <div class="category">
-            <h3>Marvel</h3>
-            <p>Les légendes de l'univers Marvel : Spider-Man, Iron Man, X-Men...</p>
-            <a href="#">Explorer</a>
-        </div>
-        <div class="category">
-            <h3>DC Comics</h3>
-            <p>Batman, Superman, Wonder Woman et bien d'autres !</p>
-            <a href="#">Explorer</a>
-        </div>
-        <div class="category">
-            <h3>Indépendants</h3>
-            <p>Découvrez les pépites indépendantes comme Image Comics et Dark Horse.</p>
-            <a href="#">Explorer</a>
-        </div>
+    <!-- 🏆 Catégories et Filtres -->
+    <section class="filters">
+        <h2>Filtrer les séries</h2>
+        <select>
+            <option>Genre</option>
+            <option>Action</option>
+            <option>Science-fiction</option>
+            <option>Fantastique</option>
+            <option>Horreur</option>
+        </select>
+        <select>
+            <option>Année</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2022</option>
+        </select>
+        <select>
+            <option>Plateforme</option>
+            <option>Netflix</option>
+            <option>Disney+</option>
+            <option>Amazon Prime</option>
+            <option>HBO Max</option>
+        </select>
+        <button onclick="applyFilters()">Appliquer</button>
     </section>
 
-    <!-- 📚 Dernières sorties -->
-    <section class="latest-comics">
+    <!-- 📺 Dernières sorties -->
+    <section class="latest-shows">
         <h2>Dernières Sorties</h2>
-        <div class="comics-list">
-            <div class="comic">
-                <img src="comic1.jpg" alt="Comic 1">
-                <h3>Titre du Comic 1</h3>
+        <div class="shows-list">
+            <div class="show">
+                <img src="show1.jpg" alt="TV Show 1">
+                <h3>Titre de la série</h3>
                 <p>Résumé rapide...</p>
                 <a href="#">Voir plus</a>
             </div>
-            <div class="comic">
-                <img src="comic2.jpg" alt="Comic 2">
-                <h3>Titre du Comic 2</h3>
+            <div class="show">
+                <img src="show2.jpg" alt="TV Show 2">
+                <h3>Titre de la série</h3>
                 <p>Résumé rapide...</p>
                 <a href="#">Voir plus</a>
             </div>
-            <div class="comic">
-                <img src="comic3.jpg" alt="Comic 3">
-                <h3>Titre du Comic 3</h3>
+            <div class="show">
+                <img src="show3.jpg" alt="TV Show 3">
+                <h3>Titre de la série</h3>
                 <p>Résumé rapide...</p>
                 <a href="#">Voir plus</a>
             </div>
         </div>
     </section>
 
-    <!-- ⭐ Comics populaires -->
-    <section class="popular-comics">
-        <h2>Les Comics les plus populaires</h2>
+    <!-- 🌟 Séries les plus populaires -->
+    <section class="popular-shows">
+        <h2>Séries les plus populaires</h2>
         <div class="popular-list">
-            <div class="comic">
-                <img src="popular1.jpg" alt="Popular Comic 1">
-                <h3>Titre du Comic</h3>
+            <div class="show">
+                <img src="popular1.jpg" alt="Popular Show 1">
+                <h3>Titre de la série</h3>
                 <p>Résumé rapide...</p>
                 <a href="#">Voir plus</a>
             </div>
-            <div class="comic">
-                <img src="popular2.jpg" alt="Popular Comic 2">
-                <h3>Titre du Comic</h3>
+            <div class="show">
+                <img src="popular2.jpg" alt="Popular Show 2">
+                <h3>Titre de la série</h3>
                 <p>Résumé rapide...</p>
                 <a href="#">Voir plus</a>
             </div>
         </div>
     </section>
 
-    <!-- ✒️ Auteurs & Éditeurs -->
-    <section class="creators">
-        <h2>Auteurs & Éditeurs</h2>
-        <div class="creators-list">
-            <div class="creator">
-                <img src="author1.jpg" alt="Auteur 1">
-                <h3>Stan Lee</h3>
-                <p>Le créateur légendaire derrière Spider-Man et bien d'autres !</p>
-                <a href="#">En savoir plus</a>
+    <!-- 🎭 Studios et producteurs -->
+    <section class="studios">
+        <h2>Les Studios & Producteurs</h2>
+        <div class="studio-list">
+            <div class="studio">
+                <img src="studio1.jpg" alt="Studio 1">
+                <h3>Marvel Studios</h3>
+                <p>Les créateurs du MCU, derrière des séries comme Loki et Daredevil.</p>
             </div>
-            <div class="creator">
-                <img src="author2.jpg" alt="Auteur 2">
-                <h3>Alan Moore</h3>
-                <p>L'esprit derrière Watchmen et V pour Vendetta.</p>
-                <a href="#">En savoir plus</a>
+            <div class="studio">
+                <img src="studio2.jpg" alt="Studio 2">
+                <h3>DC Studios</h3>
+                <p>À l’origine de Titans, The Flash et Peacemaker.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔮 Recommandations personnalisées -->
+    <section class="recommendations">
+        <h2>Nos recommandations pour vous</h2>
+        <div class="recommendation-list">
+            <div class="show">
+                <img src="rec1.jpg" alt="Recommendation 1">
+                <h3>Titre recommandé</h3>
+                <p>Pourquoi vous allez adorer cette série...</p>
+                <a href="#">Voir plus</a>
+            </div>
+            <div class="show">
+                <img src="rec2.jpg" alt="Recommendation 2">
+                <h3>Titre recommandé</h3>
+                <p>Pourquoi vous allez adorer cette série...</p>
+                <a href="#">Voir plus</a>
             </div>
         </div>
     </section>
