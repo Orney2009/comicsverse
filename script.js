@@ -3,7 +3,11 @@ const API_URL = "https://comicvine.gamespot.com/api/issues/?api_key=" + API_KEY 
 
 async function fetchComics(category) {
     try {
-        let response = await fetch(API_URL);
+        let response = await fetch(API_URL).then(response => response.json())
+  .then(data => {
+      console.log(data); // Vérifie les données dans la console
+  })
+  .catch(error => console.error("Erreur API :", error));;
         let data = await response.json();
         let comics = data.results;
 
