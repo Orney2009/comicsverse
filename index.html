@@ -3,149 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComicsVerse - TV Shows</title>
+    <title>ComicsVerse - Comics</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-    <!-- 🌀 Navigation -->
+    <!-- Header -->
     <header>
-        <nav class="navbar">
+        <div class="logo">ComicsVerse</div>
+        <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="comics.html">Comics</a></li>
-                <li><a href="tvshows.html" class="active">TV Shows</a></li>
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="wiki.html">Wiki</a></li>
+                <li><a href="comics.html" class="active">Comics</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Wiki</a></li>
+                <li><a href="#">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 🎬 Bannière TV Shows -->
-    <section class="banner">
-        <h1>Plongez dans l’univers des séries adaptées de comics</h1>
-        <p>Découvrez les meilleures séries inspirées des comics et leurs coulisses</p>
+    <!-- Section Héro -->
+    <section class="hero">
+        <h1>Explorez l'univers des Comics</h1>
+        <p>Découvrez les meilleures séries Marvel, DC et indépendantes !</p>
     </section>
 
-    <!-- 🔍 Barre de recherche -->
-    <section class="search-bar">
-        <input type="text" id="search" placeholder="Recherchez une série, un personnage, une plateforme...">
-        <button onclick="searchTVShows()">Rechercher</button>
+    <!-- Catégories -->
+    <div class="category-buttons">
+        <button onclick="fetchComics('Marvel')">Marvel</button>
+        <button onclick="fetchComics('DC Comics')">DC Comics</button>
+        <button onclick="fetchComics('Indépendant')">Éditeurs Indépendants</button>
+    </div>
+
+    <!-- Section Comics -->
+    <section class="comics-container">
+        <h2>Comics Disponibles</h2>
+        <div id="comics-grid" class="comics-grid"></div>
     </section>
 
-    <!-- 🏆 Catégories et Filtres -->
-    <section class="filters">
-        <h2>Filtrer les séries</h2>
-        <select>
-            <option>Genre</option>
-            <option>Action</option>
-            <option>Science-fiction</option>
-            <option>Fantastique</option>
-            <option>Horreur</option>
-        </select>
-        <select>
-            <option>Année</option>
-            <option>2025</option>
-            <option>2024</option>
-            <option>2023</option>
-            <option>2022</option>
-        </select>
-        <select>
-            <option>Plateforme</option>
-            <option>Netflix</option>
-            <option>Disney+</option>
-            <option>Amazon Prime</option>
-            <option>HBO Max</option>
-        </select>
-        <button onclick="applyFilters()">Appliquer</button>
-    </section>
-
-    <!-- 📺 Dernières sorties -->
-    <section class="latest-shows">
-        <h2>Dernières Sorties</h2>
-        <div class="shows-list">
-            <div class="show">
-                <img src="show1.jpg" alt="TV Show 1">
-                <h3>Titre de la série</h3>
-                <p>Résumé rapide...</p>
-                <a href="#">Voir plus</a>
-            </div>
-            <div class="show">
-                <img src="show2.jpg" alt="TV Show 2">
-                <h3>Titre de la série</h3>
-                <p>Résumé rapide...</p>
-                <a href="#">Voir plus</a>
-            </div>
-            <div class="show">
-                <img src="show3.jpg" alt="TV Show 3">
-                <h3>Titre de la série</h3>
-                <p>Résumé rapide...</p>
-                <a href="#">Voir plus</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🌟 Séries les plus populaires -->
-    <section class="popular-shows">
-        <h2>Séries les plus populaires</h2>
-        <div class="popular-list">
-            <div class="show">
-                <img src="popular1.jpg" alt="Popular Show 1">
-                <h3>Titre de la série</h3>
-                <p>Résumé rapide...</p>
-                <a href="#">Voir plus</a>
-            </div>
-            <div class="show">
-                <img src="popular2.jpg" alt="Popular Show 2">
-                <h3>Titre de la série</h3>
-                <p>Résumé rapide...</p>
-                <a href="#">Voir plus</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🎭 Studios et producteurs -->
-    <section class="studios">
-        <h2>Les Studios & Producteurs</h2>
-        <div class="studio-list">
-            <div class="studio">
-                <img src="studio1.jpg" alt="Studio 1">
-                <h3>Marvel Studios</h3>
-                <p>Les créateurs du MCU, derrière des séries comme Loki et Daredevil.</p>
-            </div>
-            <div class="studio">
-                <img src="studio2.jpg" alt="Studio 2">
-                <h3>DC Studios</h3>
-                <p>À l’origine de Titans, The Flash et Peacemaker.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔮 Recommandations personnalisées -->
-    <section class="recommendations">
-        <h2>Nos recommandations pour vous</h2>
-        <div class="recommendation-list">
-            <div class="show">
-                <img src="rec1.jpg" alt="Recommendation 1">
-                <h3>Titre recommandé</h3>
-                <p>Pourquoi vous allez adorer cette série...</p>
-                <a href="#">Voir plus</a>
-            </div>
-            <div class="show">
-                <img src="rec2.jpg" alt="Recommendation 2">
-                <h3>Titre recommandé</h3>
-                <p>Pourquoi vous allez adorer cette série...</p>
-                <a href="#">Voir plus</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 👇 Footer -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 ComicsVerse - Tous droits réservés</p>
-        <p><a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
     </footer>
-
 </body>
 </html>
