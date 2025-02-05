@@ -1,5 +1,5 @@
 const API_KEY = "831dae0061968bd12b2cc9f33612e1b91f837929"; // Remplace par ta clé API
-const API_URL = "https://comicvine.gamespot.com/api/issues/?api_key=" + API_KEY + "&format=json&sort=cover_date:desc";
+const API_URL = "https://script.google.com/macros/s/AKfycbyPic57luZYZ4srjZKuSkKyfBQkAhRtM1GzGnRHGmYSbwe7vtz3nT9_zq5oJih0DHho/exec";
 
 async function fetchComics(category) {
     try {
