@@ -1,4 +1,4 @@
-const API_KEY = "TON_CLE_API"; // Remplace par ta clé API
+const API_KEY = "831dae0061968bd12b2cc9f33612e1b91f837929"; // Remplace par ta clé API
 const API_URL = "https://comicvine.gamespot.com/api/issues/?api_key=" + API_KEY + "&format=json&sort=cover_date:desc";
 
 async function fetchComics(category) {
@@ -38,7 +38,7 @@ function displayComics(comics) {
 // Générer le lien Amazon
 function generateAffiliateLink(title) {
     let baseUrl = "https://www.amazon.com/s?k=";
-    let affiliateTag = "&tag=ton-id-affiliation"; // Remplace par ton ID Amazon
+    let affiliateTag = "&tag=comicsverse9-20"; // Remplace par ton ID Amazon
     let formattedTitle = encodeURIComponent(title);
     return baseUrl + formattedTitle + affiliateTag;
 }
