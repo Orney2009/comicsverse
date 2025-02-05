@@ -1,32 +1,47 @@
-let currentIndex = 0;
-const images = document.querySelectorAll(".carousel-images img");
-const totalImages = images.length;
+const API_KEY = "TON_CLE_API"; // Remplace par ta clé API
+const API_URL = "https://comicvine.gamespot.com/api/issues/?api_key=" + API_KEY + "&format=json&sort=cover_date:desc";
 
-function showSlide(index) {
-    // Si on dépasse le nombre total d'images, recommence depuis la première
-    if (index >= totalImages) {
-        currentIndex = 0;
-    } 
-    // Si on revient avant la première image, passe à la dernière
-    else if (index < 0) {
-        currentIndex = totalImages - 1;
-    } else {
-        currentIndex = index;
+async function fetchComics(category) {
+    try {
+        let response = await fetch(API_URL);
+        let data = await response.json();
+        let comics = data.results;
+
+        // Filtrer les comics en fonction de la catégorie sélectionnée
+        let filteredComics = comics.filter(comic => {
+            return comic.publisher && comic.publisher.name.toLowerCase().includes(category.toLowerCase());
+        });
+
+        displayComics(filteredComics);
+    } catch (error) {
+        console.error("Erreur lors du chargement des comics :", error);
     }
-
-    // Applique la transformation pour décaler les images
-    document.querySelector(".carousel-images").style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-function nextSlide() {
-    showSlide(currentIndex + 1);
+function displayComics(comics) {
+    let comicsGrid = document.getElementById("comics-grid");
+    comicsGrid.innerHTML = "";
+
+    comics.forEach(comic => {
+        let comicCard = `
+            <div class="comic-card">
+                <img src="${comic.image.original_url}" alt="${comic.name}">
+                <h3>${comic.name}</h3>
+                <p>Sortie : ${comic.cover_date}</p>
+                <a href="${generateAffiliateLink(comic.name)}" target="_blank" class="buy-btn">Acheter sur Amazon</a>
+            </div>
+        `;
+        comicsGrid.innerHTML += comicCard;
+    });
 }
 
-function prevSlide() {
-    showSlide(currentIndex - 1);
+// Générer le lien Amazon
+function generateAffiliateLink(title) {
+    let baseUrl = "https://www.amazon.com/s?k=";
+    let affiliateTag = "&tag=ton-id-affiliation"; // Remplace par ton ID Amazon
+    let formattedTitle = encodeURIComponent(title);
+    return baseUrl + formattedTitle + affiliateTag;
 }
 
-// Délai ajusté de 8 secondes pour un défilement automatique
-setInterval(() => {
-    nextSlide();
-}, 8000);  // Le carrousel défile toutes les 8 secondes
+// Charger la catégorie Marvel par défaut au démarrage
+fetchComics("Marvel");
